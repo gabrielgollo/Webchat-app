@@ -1,1 +1,3 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+# Webchat App - React js
+
+This will be a webchat app using react js in this frontend.
