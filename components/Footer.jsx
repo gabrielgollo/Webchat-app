@@ -5,14 +5,17 @@ import { makeStyles } from "@material-ui/core"
 function Footer(){
     const useStyles = makeStyles((theme) => ({
         footer:{
-            backgroundColor:"#490083",
+            backgroundColor: theme.footer.color,
             borderRadius:"1px",
-            color:"whitesmoke",
+            position:"absolute",
+            bottom:"0",
+            color:theme.palette.primary.main,
             margin:"auto",
             padding:"0.5%",
-            height: "10%",
-            maxWidth:"60%",
-            marginTop:"2%"
+            maxWidth:"100%",
+            marginTop:"0%",
+            width:"100%",
+            boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)",
         },
         text: {
             fontWeight:"bold"

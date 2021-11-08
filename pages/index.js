@@ -6,7 +6,7 @@ import Login from "./login";
 function Home({ children }) {
   const [auth, setAuth] = useState(false);
 
-  return !auth ? <Webchat /> : <Login />;
+  return auth ? <Webchat /> : <Login />;
 }
 
 export default Home;

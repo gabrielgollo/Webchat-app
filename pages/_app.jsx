@@ -1,10 +1,20 @@
+import Theme from '../theme/theme';
 import Layout from '../layout';
-import '../styles.css'
+import { CssBaseline } from '@material-ui/core';
+import React from 'react';
+import { ToastContainer } from 'react-toastify';
 function App({ Component, pageProps }) {
+
   return (
-    <Layout suppressHydrationWarning>
-      <Component {...pageProps} />
-    </Layout>
+    <React.Fragment>
+      <Theme>
+        <CssBaseline />
+        <ToastContainer />
+        <Layout suppressHydrationWarning>
+          <Component {...pageProps} />
+        </Layout>
+      </Theme>
+    </React.Fragment>
   );
 }
 

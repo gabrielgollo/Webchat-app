@@ -1,10 +1,11 @@
 import Head from "next/head";
 import Navigationbar from "../components/Navigationbar.jsx";
 import Footer from "../components/Footer.jsx";
-import { Box, Container, Grid, makeStyles } from "@material-ui/core";
+import { Box, Container, Grid, makeStyles, useTheme } from "@material-ui/core";
 
 
 export default function Layout({children}) {
+  const theme = useTheme();
   const useStyles = makeStyles( theme => ({
     container:{
       opacity:"100%",
@@ -15,22 +16,22 @@ export default function Layout({children}) {
   const classes = useStyles()
   
   return (
-      <div>
+      <body>
             <Head>
                 <title>{process.env.NEXT_PUBLIC_TITLE}</title>
             </Head>
-            <Navigationbar />
-            <Box>
-              <Container maxWidth="lg">
-                <Grid container>
-                  <Grid item className={classes.container} xs={12}
-                  >
-                      {children}
+              <Navigationbar />
+              <Box>
+                <Container maxWidth="lg" disableGutters>
+                  <Grid container>
+                    <Grid item className={classes.container} xs={12}
+                    >
+                        {children}
+                    </Grid>
                   </Grid>
-                </Grid>
-              </Container>
-            </Box>
-            <Footer />
-    </div>
+                </Container>
+              </Box>
+              <Footer />
+    </body>
   );
 }
