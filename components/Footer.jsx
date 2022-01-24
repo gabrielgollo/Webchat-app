@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box, Container, Grid, Typography } from '@material-ui/core';
-import { makeStyles } from "@material-ui/core"
+import { Box, Container, Grid, Typography } from '@mui/material';
+import { makeStyles } from "@mui/styles"
 
 function Footer(){
     const useStyles = makeStyles((theme) => ({

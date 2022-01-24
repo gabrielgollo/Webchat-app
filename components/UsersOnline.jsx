@@ -1,6 +1,5 @@
-import { Container } from "@material-ui/core";
-import { makeStyles } from "@material-ui/styles";
-
+import { Container } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 export default function UsersOnline() {
     const useStyles = makeStyles( theme => ({
         onlineUsersBox: {

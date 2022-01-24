@@ -1,5 +1,6 @@
 import { useRouter } from "next/dist/client/router";
-import { Container, Grid, makeStyles, Typography } from "@material-ui/core";
+import { Container, Grid, Typography } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 import InputText from "../../components/Forms/Input";
 import { useStyles } from "./styles";
 import * as yup from "yup";

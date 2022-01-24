@@ -1,4 +1,4 @@
-import { Container, Grid, Typography } from "@material-ui/core";
+import { Container, Grid, Typography } from "@mui/material";
 import { useForm } from "react-hook-form";
 import ButtonDefault from "../../components/Forms/Button";
 import InputText from "../../components/Forms/Input";

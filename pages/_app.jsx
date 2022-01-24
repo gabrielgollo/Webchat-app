@@ -1,6 +1,6 @@
-import Theme from '../theme/theme';
+import Theme from '../theme/theme.jsx';
 import Layout from '../layout';
-import { CssBaseline } from '@material-ui/core';
+import { CssBaseline } from '@mui/material';
 import React from 'react';
 import { ToastContainer } from 'react-toastify';
 function App({ Component, pageProps }) {

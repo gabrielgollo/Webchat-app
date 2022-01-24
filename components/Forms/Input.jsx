@@ -1,6 +1,4 @@
-import { TextField } from '@material-ui/core'
-import { useTheme } from '@material-ui/styles';
-
+import { TextField, useTheme } from '@mui/material'
 
 function InputText(props){
     const theme = useTheme();

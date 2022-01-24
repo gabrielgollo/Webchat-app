@@ -1,4 +1,5 @@
-import { Box, Container, Grid, makeStyles } from "@material-ui/core";
+import { Box, Container, Grid } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 import { useState } from "react";
 import MessageBox from "../../components/MessageBox";
 import UsersOnline from "../../components/UsersOnline";

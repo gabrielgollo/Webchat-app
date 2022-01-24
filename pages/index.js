@@ -1,4 +1,4 @@
-import { Box, Grid } from "@material-ui/core";
+import { Box, Grid } from "@mui/material";
 import { useState } from "react";
 import Webchat from "./webchat";
 import Login from "./login";

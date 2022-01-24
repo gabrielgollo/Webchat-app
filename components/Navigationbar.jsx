@@ -1,10 +1,12 @@
-import { AppBar, Typography, IconButton, Box, Grid } from "@material-ui/core"
-import AccountCircle from "@material-ui/icons/AccountCircle";
-import { makeStyles } from "@material-ui/core"
+import { AppBar, Typography, IconButton, Box, Grid, useTheme } from "@mui/material"
+import { makeStyles } from "@mui/styles";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useState } from "react"
-import { useTheme } from "@material-ui/styles";
-import { Brightness4Rounded, Brightness7Rounded, Home } from "@material-ui/icons";
+import { Brightness4Rounded, Brightness7Rounded, Home } from "@mui/icons-material";
 import { useRouter } from "next/dist/client/router";
+import { getCookies, setCookie } from "../src/utils/cookies";
+
+
 const useStyles = makeStyles((theme) => ({
     navbar:{
         flexGrow:1,
@@ -32,14 +34,9 @@ function Navigationbar() {
     }
 
     const handleTheme = () => {
-        if(window.localStorage){
-            const localStorage=window.localStorage
-            if(localStorage.getItem("theme")==="dark"){
-                localStorage.setItem("theme","light")
-            }
-            else{
-                localStorage.setItem("theme","dark")
-            }
+        if(process.browser) {
+            const themeCookie = getCookies("theme")
+            setCookie("theme", themeCookie === "dark" ? "light" : "dark")
         }
     }
 
@@ -53,7 +50,7 @@ function Navigationbar() {
                     alignItems="center"
                 >
                     <Grid item>
-                        <IconButton onClick={ () => handlePage("/")}><Home /></IconButton>
+                        <IconButton style={{ color: theme.palette.primary.main }}onClick={ () => handlePage("/")}><Home /></IconButton>
                     </Grid>
                     <Grid item>
                         <Typography className={styleClass.title} variant="h6" noWrap>
@@ -69,7 +66,7 @@ function Navigationbar() {
                         >
                             <Grid item>
                                 <IconButton>
-                                    <AccountCircle className={styleClass.accountCircle} />
+                                    <AccountCircleIcon className={styleClass.accountCircle} />
                                 </IconButton>
                             </Grid>
                             <Grid item>
